@@ -1,0 +1,12 @@
+[
+  {
+    "path": "/tablelist",
+    "route": "/srs/sqlserver/tablelist",
+    "name": "Hello World",
+    "description": null,
+    "role": "srs_browse",
+    "onclick": null,
+    "icon": null,
+    "visible": true
+  }
+]

@@ -1,9 +1,11 @@
-<SRS>  
+﻿<SRS>  
     <title>Hello World</title>
     <description>Markdown Support</description>
   <commands>
-   <command name="hello">
-SELECT	 table_schema,table_name,
+   <command name="view" title="Database Columns">
+SELECT	
+       ROW_NUMBER() OVER(ORDER BY table_schema,table_name) AS Row,
+     table_schema,table_name,
           column_name,
           data_type + isnull('(' + cast( character_maximum_length as varchar) + ')', '') type
           ,
@@ -11,12 +13,11 @@ SELECT	 table_schema,table_name,
                WHEN 'no' then '  NOT NULL'
           ELSE ''
           END data_type,
-		  NUMERIC_PRECISION,NUMERIC_SCALE,
+		  NUMERIC_PRECISION,
+     	  NUMERIC_SCALE,
           column_default 'default'
-FROM      INFORMATION_SCHEMA.columns
-WHERE     column_name like '%price%'--table_name= 'contractor'
-and data_type ='decimal'
-ORDER BY  2,
+FROM      INFORMATION_SCHEMA.columns 
+ORDER BY  1,2,
           ordinal_position
    </command>
   </commands>
