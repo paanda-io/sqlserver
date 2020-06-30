@@ -1,10 +1,30 @@
 [
   {
-    "path": "/tablelist",
-    "route": "/srs/sqlserver/tablelist",
-    "name": "Hello World",
+    "path": "/Columns",
+    "route": "/srs/sqlserver/Columns/view",
+    "name": "Table columns",
     "description": null,
-    "role": "srs_browse",
+    "role": null,
+    "onclick": null,
+    "icon": null,
+    "visible": true
+  },
+  {
+    "path": "/Databases",
+    "route": "/srs/sqlserver/Databases/view",
+    "name": "Database sizes",
+    "description": null,
+    "role": null,
+    "onclick": null,
+    "icon": null,
+    "visible": true
+  },
+  {
+    "path": "/Tables",
+    "route": "/srs/sqlserver/Tables/view",
+    "name": "Tables",
+    "description": null,
+    "role": null,
     "onclick": null,
     "icon": null,
     "visible": true

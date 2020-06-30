@@ -1,5 +1,5 @@
 ﻿<SRS>  
-    <title>Hello World</title>
+    <title>Table columns</title>
     <description>Markdown Support</description>
   <commands>
    <command name="view" title="Database Columns">

@@ -1,0 +1,21 @@
+﻿<SRS>  
+    <title>Database sizes</title>
+    <description>Markdown Support</description>
+  <commands>
+   <command name="view" title="Database Columns">
+with fs
+as
+(
+    select database_id, type, cast(round(size * 8.0 / 1024,0) as int) size
+    from sys.master_files
+)
+select 
+    name,
+    (select sum(size) from fs where type = 0 and fs.database_id = db.database_id) DataFileSizeMB,
+    (select sum(size) from fs where type = 1 and fs.database_id = db.database_id) LogFileSizeMB
+from sys.databases db
+order by 2 desc
+
+   </command>
+  </commands>
+</SRS>
